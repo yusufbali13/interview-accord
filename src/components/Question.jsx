@@ -1,56 +1,18 @@
-import React, { useState } from 'react'
-import { arrowdown, arrowup } from '../helper/icons';
-import Card from './Card';
+import React, { useState } from "react";
+import { arrowdown, arrowup } from "../helper/icons";
+import Card from "./Card";
 
-const Question = ({id,question,answer}) => {
-    const [show, setShow] = useState(false);
+const Question = ({ id, question, answer }) => {
+  const [show, setShow] = useState(false);
 
-    console.log(!'saa');
-    
+  console.log(!"saa");
 
-    const handleToggle = ()=> {
-        // if(show){
-        //     setShow(false);
-        // }else{
-        //     setShow(true);
-        // }
-        setShow(!show) //& toglle mantığını not operatörüyle kurmuş olduk
-    }
+  const handleToggle = () => {
+    setShow(!show); //& toglle mantığını not operatörüyle kurmuş olduk
+  };
 
   return (
     <div className="card-group">
-      {/* {show ? (
-        <div className="card">
-          <div className="ques-answer">
-            <h5>
-              {id}.{question}
-            </h5>
-            <button onClick={handleToggle}>{arrowup}</button>
-          </div>
-          <p>{answer}</p>
-        </div>
-      ) : (
-        <div className="card">
-          <div className="ques">
-            <h5>
-              {id}.{question}
-            </h5>
-            <button onClick={handleToggle}>{arrowdown}</button>
-          </div>
-        </div>
-      )} */}
-      {/*2.yöntem*/}
-      {/* <div className="card">
-        <div className="ques-answer">
-          <h5>
-            {id}.{question}
-          </h5>
-          <button onClick={handleToggle}>{show ? arrowdown : arrowup}</button>
-        </div>
-        {show && <p>{answer}</p>}
-      </div>
-    </div> */}
-      {/*3.yöntem*/}
       {show ? (
         <Card
           id={id}
@@ -69,6 +31,6 @@ const Question = ({id,question,answer}) => {
       )}
     </div>
   );
-}
+};
 
-export default Question
+export default Question;
